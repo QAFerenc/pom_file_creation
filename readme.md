@@ -1,0 +1,15 @@
+This simple program shows a way, how to create Java Page Object Model files in an easier way.
+
+The program is shown in the following video in English language :
+
+https://www.youtube.com/watch?v=9gkjxy2lj7c
+
+In Hungarian language : 
+
+https://www.youtube.com/watch?v=Kjo5XOcCfZw
+
+The Java program uses Facebook as example website.
+
+The most important part of the code is the "Robot" class, part of the AWK package. With this class the button presses, such as Mouse right-click is replaced with Mouse operations. In this way the user does not need to do the regular mouse-right click, etc. operations, when he/she wants to copy the locator from the website. 
+
+At the end of using the program, the locators those were saved with the Mouse presses, a Java Page Object Model file is created.
