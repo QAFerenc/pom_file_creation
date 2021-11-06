@@ -1,4 +1,4 @@
-This simple program shows a way, how to create Java Page Object Model files in an easier way.
+This simple program shows an example, how to create Java Page Object Model files in an easier way.
 
 The program is shown in the following video in English language :
 
