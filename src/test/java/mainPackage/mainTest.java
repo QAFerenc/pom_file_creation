@@ -111,7 +111,7 @@ public class mainTest {
 
 
     @Test
-    public  void openMyBlog() throws AWTException, InterruptedException, IOException {
+    public  void simplePageObjectModelFileCreator() throws AWTException, InterruptedException, IOException {
 
         Robot robot = new Robot();
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\chromedriver\\chromedriver.exe");
