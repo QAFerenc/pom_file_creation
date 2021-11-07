@@ -18,6 +18,8 @@ package mainPackage;
 
         1. (as above)
         2. Mouse Left Button click
+        
+        When you want to end the program, move the mouse cursor to the top left corner of the screen
  */
 
 
@@ -25,6 +27,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -94,7 +97,7 @@ public class mainTest {
                         vector.add(name_substr);
 
                         try {
-                            myWriter.write("@FindBy(\"//*[@id=\"" + id_substr + "\"]" + "\"" + ")" + "\n");
+                            myWriter.write("@FindBy(\"//*[@id='" + id_substr + "']" + "\"" + ")" + "\n");
                             myWriter.write("private WebElement " + name_substr + ";"+"\n"+"\n");
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -111,7 +114,7 @@ public class mainTest {
 
 
     @Test
-    public  void simplePageObjectModelFileCreator() throws AWTException, InterruptedException, IOException {
+    public  void openMyBlog() throws AWTException, InterruptedException, IOException {
 
         Robot robot = new Robot();
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\chromedriver\\chromedriver.exe");
@@ -126,14 +129,14 @@ public class mainTest {
 
         // Delete the existing POM file
 
-        File file = new File("locators.java");
+        File file = new File("pom_file.java");
         file.delete();
 
 
-        // As the Page Object Model file is a Java file, create the necessary imports for the file.
+        // As the POM file is a Java file, create the necessary imports for the file.
         // The structure of the file is a valid Java file
 
-        myWriter = new BufferedWriter(new FileWriter("locators.java", true));
+        myWriter = new BufferedWriter(new FileWriter("pom_file.java", true));
 
 
         myWriter.write("package testProject.pageObjects;\n" +
@@ -141,11 +144,11 @@ public class mainTest {
                 "import org.openqa.selenium.support.FindBy;\n" +
                 "import org.openqa.selenium.WebDriver;\n" +
                 "import org.openqa.selenium.support.ui.WebDriverWait;\n" +
-                "import javax.xml.ws.wsaddressing.W3CEndpointReference;\n" +
                 "\n" +
                 "public class TestPage  {\n" +
                 "\n" );
 
+//        myWriter.close();
 
         Point p = MouseInfo.getPointerInfo().getLocation();
 
@@ -167,7 +170,8 @@ public class mainTest {
             robot.keyRelease(KeyEvent.VK_C);
             robot.keyRelease(KeyEvent.VK_SHIFT);
 
-  
+  //          myWriter = new BufferedWriter(new FileWriter("pom_file.java", true));
+
             // Copy the DOM part of the actual element from the Code Inspector
 
             Thread.sleep(1500);
@@ -207,7 +211,9 @@ public class mainTest {
     public static void afterClass() throws IOException {
 
         // Finish the POM file : create the getters for the stored locators and close the file with character }"
-     
+
+        //myWriter = new BufferedWriter(new FileWriter("pom_file.java", true));
+
         myWriter.write("\n\n\n");
         myWriter.write("//getters "+"\n\n");
 
