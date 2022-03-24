@@ -1,3 +1,5 @@
+# Page Object Model (POM) file generation with only Mouse clicks (no button click)
+
 This simple program shows an example, how to create Java Page Object Model files in an easier way.
 
 The program is shown in the following video in English language :
