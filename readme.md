@@ -1,4 +1,4 @@
-# Page Object Model (POM) file generation with only Mouse clicks (no button click)
+# Page Object Model (POM) file generation with only Mouse clicks, no button click (Technology : Java, Selenium)
 
 This simple program shows an example, how to create Java Page Object Model files in an easier way.
 
